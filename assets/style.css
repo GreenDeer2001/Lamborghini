@@ -1,0 +1,584 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-title: "Roboto Condensed", sans-serif;
+  --font-info: "Vollkorn", serif;
+  --white: #ffffff;
+  --details: #ffda53;
+  --tittle: #b2ab99;
+  --main: #2f2032;
+  --darkerMain: #18071b;
+  --max-width: 1170px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+ul{
+ list-style: none;
+}
+li{
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: var(--font-title);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/* global */
+
+section {
+  padding: 5rem 0;
+}
+.section-center {
+  max-width: var(--max-width);
+  width: 90%;
+  margin: 0 auto;
+}
+iframe{
+  width: 100%;
+  display: block;
+}
+
+/* navbar */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--main);
+}
+nav{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+}
+@media (min-width: 768px){
+  nav{
+  padding: 0.5rem 0.75rem;
+
+  }
+}
+.nav-small-screen{
+  display: flex;
+  justify-content:space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+  .logo-container h3 {
+  color:var(--details);
+  margin-bottom: 0;
+  }
+
+
+.nav-btn{
+  font-size: 2rem;
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.nav-btn:hover{
+  opacity: 0.7;
+}
+
+.nav-links{
+  display: none;
+}
+.nav-links li {
+  display:inline-block;
+  font-size:1.5rem;
+  padding: 0 0.75rem;
+}
+.nav-links li a {
+  align-self: center;
+  transition: all 0.3s linear;
+  color: var(--tittle);
+
+}
+.nav-links li:hover a{
+opacity: 0.7;
+}
+
+@media (min-width:768px){
+  nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  .nav-btn{
+    display: none;
+  }
+
+  .nav-links{
+    display: flex;
+  }
+}
+
+
+
+/* slider */
+
+.nav-slider{
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+@media (min-width: 768px) {
+  .nav-slider{
+    display: none;
+  }
+}
+
+.show-slider{
+  height: 230px !important;
+  transition: all 0.3s linear;
+}
+
+.nav-slider-links li {
+  display:block;
+  font-size:2rem;
+  transition: all 0.3s linear;
+  padding: 0.5rem 1.5rem;
+}
+
+.nav-slider-links li:hover{
+  margin-left:1rem;
+}
+.nav-slider-links a {
+  color: var(--tittle);
+}
+
+
+
+
+
+/* hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    url("./images/camper1.jpg") no-repeat center/cover;
+}
+.hero-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--tittle);
+}
+
+.hero-info h3 {
+  font-family: var(--font-info);
+  color: var(--details);
+}
+
+.moreInfoIcon {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--white);
+  -webkit-animation: showMore 2s infinite linear;
+          animation: showMore 2s infinite linear;
+}
+@-webkit-keyframes showMore {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+@keyframes showMore {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+@-webkit-keyframes showMoreInfo {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes showMoreInfo {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
+
+/* info */
+
+#info {
+  background: whitesmoke;
+  padding-bottom: 0;
+}
+
+.single-card {
+  position: relative;
+  border-bottom: 1px solid var(--tittle);
+}
+.single-card:last-child {
+  border-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .single-card {
+    display: grid;
+    grid-auto-flow: dense;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .single-card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: var(--tittle);
+  }
+
+  .reversed-img {
+    grid-column: 2;
+  }
+  .reversed-info {
+    margin-left: 1rem;
+
+    grid-column: 1;
+  }
+}
+
+
+.img-container {
+  margin: 1rem;
+  z-index: 2;
+  border: 2px solid var(--main);
+  border-radius: 1rem;
+  background: var(--main);
+  overflow: hidden;
+}
+
+.img-container img {
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition:all 0.3s linear;
+}
+
+.img-container:hover img {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    margin: 3rem;
+    border: 5px solid var(--main);
+  }
+}
+
+.single-card-info {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .single-card-info {
+    margin-top: 3rem;
+    padding: 0 3rem;
+  }
+}
+.single-card-info p {
+  font-size: 1.5rem;
+  color: var(--tittle);
+  letter-spacing: 0.1rem;
+  font-family: var(--font-info);
+}
+
+/* cars */
+#cars {
+  position: relative;
+  padding:0;
+  padding-top:3.5rem;
+  overflow: hidden;
+  background: var(--darkerMain);
+
+}
+@media (min-width: 768px) {
+  #cars {
+    padding-bottom:2rem;
+  }
+}
+
+.car-slider {
+  position: relative;
+  display: flex;
+  width: 500%;
+  padding-bottom: 5%;
+  height: 100vh;
+  transform: translateX(-20%);
+}
+
+.single-car {
+  width: 100%;
+}
+
+.single-car h1 {
+  color: var(--tittle);
+  text-align: center;
+}
+
+.single-car-img {
+  width: 70%;
+  margin: 5rem auto 0 auto;
+  height: 60%;
+}
+@media (min-width: 768px) {
+  .single-car-img {
+    margin-top: 0;
+    height: 85%;
+  }
+}
+.single-car-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+    height: 100%;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  background:transparent;
+  border: none;
+  font-size: 2.2rem;
+  color: white;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.slider-btn:hover {
+  opacity: 0.8;
+  transform:scale(1.1);
+}
+
+.slider-btn.left {
+  left: 6%;
+}
+.slider-btn.right {
+  right: 6%;
+}
+
+/* rewards */
+
+#rewards{
+  background:whitesmoke;
+}
+
+.rewards-title{
+  text-transform:uppercase;
+  text-align: center;
+  color: var(--tittle);
+}
+
+.rewards-container{
+  display: grid;
+  margin-top: 2rem;
+  justify-content:center;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+}
+.reward{
+  text-align:center;
+  color:gold;
+  font-size: 4rem;
+}
+@media (min-width: 662px){
+  .reward{font-size:6rem;}
+}
+@media (min-width: 768px){
+  .reward{font-size:8rem;}
+}
+@media (min-width: 992px){
+  .reward{ font-size:10rem}
+}
+
+/* dealer */
+#dealer{
+  background: hsl(212, 33%, 89%);;
+}
+.dealer-center{
+  display: grid;
+}
+@media (min-width: 768px){
+.dealer-center{
+grid-template-columns: repeat(2,1fr)}
+}
+.dealer-info{
+ display: grid;
+ color: var(--tittle);
+ align-items: center;
+}
+
+.dealer-map{
+  border: 3px solid var(--darkerMain);
+}
+
+/* footer */
+footer{
+  background-color: var(--darkerMain);
+}
+
+.footer-center{
+  padding: 5rem 0;
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 768px){
+  .footer-center{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-links{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.footer-links li a{
+  color: var(--tittle);
+  font-family: var(--font-info);
+  font-size: 2rem;
+  padding:1rem;
+}
+
+.social-icons{
+  display:flex;
+  justify-content:center;
+}
+@media (max-width: 768px){
+  .social-icons{
+    align-items: center;
+    margin-top:4rem;
+  }
+}
+
+.footer-icon a i{
+  color: var(--tittle);
+  font-size: 2rem;
+  padding:1rem;
+
+}
+
+.bottom-info{
+  font-family: var(--font-info);
+  color: var(--main);
+  padding:0.5rem;
+  text-align:center;
+}
+
+
